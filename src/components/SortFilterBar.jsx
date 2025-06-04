@@ -16,6 +16,7 @@ import React from "react";
  * @param {Function} props.onLimitChange - Fonction appelée quand l'utilisateur change la limite
  * @param {string[]} props.regions - Tableau des régions disponibles (récupérées de l'API)
  */
+
 function SortFilterBar({
   region,
   onRegionChange,
