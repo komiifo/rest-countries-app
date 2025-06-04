@@ -13,7 +13,7 @@ import { useFavorites } from "../hooks/useFavorites";
  */
 
 function Navigation({ currentPage, onPageChange }) {
-  const { getFavoriteCount, stats } = useFavorites();
+  const { getFavoriteCount } = useFavorites();
   const favoritesCount = getFavoriteCount();
 
   return (
@@ -44,7 +44,7 @@ function Navigation({ currentPage, onPageChange }) {
             Favoris
             {favoritesCount > 0 && (
               <span className="ml-1 text-xs bg-green-100 text-green-800 px-1 rounded">
-                {Object.keys(stats.regions).length} régions
+                {favoritesCount} pays
               </span>
             )}
           </button>
