@@ -1,5 +1,7 @@
 // src/components/CountryCard.jsx
 import React from "react";
+import { Users, Globe, MapPin } from "lucide-react";
+import FavoriteButton from "./FavoriteButton";
 
 /**
  * Composant CountryCard
@@ -19,28 +21,40 @@ import React from "react";
 function CountryCard({ country }) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all">
-      {/* Image du drapeau du pays */}
-      <img
-        src={country.flags.svg}
-        alt={country.name.common}
-        className="w-full h-48 object-cover"
-      />
+      <div className="relative">
+        <img
+          src={country.flags.svg}
+          alt={country.name.common}
+          className="w-full h-48 object-cover"
+        />
+        {/* 🆕 AJOUT DU BOUTON FAVORI */}
+        <div className="absolute top-3 right-3">
+          <FavoriteButton country={country} />
+        </div>
+      </div>
 
       <div className="p-4">
-        {/* Nom du pays en titre principal */}
         <h2 className="text-lg font-bold mb-2">{country.name.common}</h2>
-        <p>
-          {/* Population avec formatage des nombres (séparateurs de milliers) */}
-          <strong>Population:</strong> {country.population.toLocaleString()}
-        </p>
-        <p>
-          {/* Région géographique */}
-          <strong>Région:</strong> {country.region}
-        </p>
-        <p>
-          {/* Capitale avec gestion des cas où il n'y en a pas */}
-          <strong>Capitale:</strong> {country.capital?.[0] ?? "N/A"}
-        </p>
+        <div className="space-y-1 text-sm text-gray-600">
+          <div className="flex items-center">
+            <Users className="w-4 h-4 mr-2" />
+            <span>
+              <strong>Population:</strong> {country.population.toLocaleString()}
+            </span>
+          </div>
+          <div className="flex items-center">
+            <Globe className="w-4 h-4 mr-2" />
+            <span>
+              <strong>Région:</strong> {country.region}
+            </span>
+          </div>
+          <div className="flex items-center">
+            <MapPin className="w-4 h-4 mr-2" />
+            <span>
+              <strong>Capitale:</strong> {country.capital?.[0] ?? "N/A"}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

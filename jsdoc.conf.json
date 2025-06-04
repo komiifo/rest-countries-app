@@ -1,0 +1,31 @@
+{
+  "source": {
+    "include": ["./src/"],
+    "includePattern": "\\.(js|jsx)$",
+    "exclude": ["node_modules/", "build/", "dist/", "public/"]
+  },
+  "opts": {
+    "destination": "./docs/",
+    "recurse": true,
+    "readme": "./README.md"
+  },
+  "plugins": ["plugins/markdown", "jsdoc-plugin-intersection"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "better-docs": {
+      "name": "Countries App Documentation",
+      "logo": "logo.png",
+      "title": "Documentation de l'Application Pays du Monde",
+      "css": "custom.css",
+      "trackingCode": "",
+      "hideGenerator": true,
+      "navLinks": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/komiifo/rest-countries-app.git"
+        }
+      ]
+    }
+  }
+}
