@@ -9,6 +9,7 @@ import React from "react";
  * @param {string} props.value - Valeur actuelle du champ de recherche (terme saisi)
  * @param {Function} props.onChange - Fonction appelée quand l'utilisateur tape dans le champ
  */
+
 function SearchBar({ value, onChange }) {
   return (
     <div className="mb-4">
